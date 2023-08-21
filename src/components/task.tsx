@@ -33,7 +33,7 @@ export default function Task(props: TaskProps) {
   };
   return (
     <Flex direction="column" borderBottom="1px" borderBottomColor="gray.400">
-      <Flex w="full" h="10vh" alignItems="center">
+      <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
         <Flex w="70%">
           <Link to={`/tasks/${id}`}>
             <Text _hover={{ textDecoration: "underline" }}>{title}</Text>

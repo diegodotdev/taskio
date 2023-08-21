@@ -17,11 +17,73 @@ export default function Home() {
 
   useEffect(() => {
     fetchTasks(user?.id).then((data) => setTasks(data));
-  }, []);
+  }, [isSignedIn]);
+
+  if (!isSignedIn)
+    return (
+      <Container maxW="6xl">
+        <Flex
+          direction="column"
+          borderBottom="1px"
+          borderBottomColor="gray.400"
+        >
+          <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
+            <Flex
+              w="70%"
+              justifyContent="space-between"
+              pr="2"
+              alignItems="center"
+            >
+              <Text>Task</Text>
+              <Select
+                w="200px"
+                onChange={(e) => setFilter(e.target.value)}
+                value={filter}
+              >
+                <option value="all">All</option>
+                <option value="complete">Done</option>
+                <option value="incomplete">Not Done</option>
+              </Select>
+            </Flex>
+            <Grid
+              w="10%"
+              h="full"
+              placeItems="center"
+              borderLeft="1px"
+              borderLeftColor="gray.400"
+            >
+              <Text>Status</Text>
+            </Grid>
+            <Grid
+              w="10%"
+              h="full"
+              placeItems="center"
+              borderLeft="1px"
+              borderLeftColor="gray.400"
+            >
+              <Check size="20px" />
+            </Grid>
+            <Grid
+              w="10%"
+              h="full"
+              placeItems="center"
+              borderLeft="1px"
+              borderLeftColor="gray.400"
+            >
+              <Trash size="20px" />
+            </Grid>
+          </Flex>
+        </Flex>
+        {/* Tasks */}
+        <Grid w="full" h="77vh" placeItems="center">
+          <Text opacity=".5">No tasks</Text>
+        </Grid>
+      </Container>
+    );
   return (
     <Container maxW="6xl">
       <Flex direction="column" borderBottom="1px" borderBottomColor="gray.400">
-        <Flex w="full" h="10vh" alignItems="center">
+        <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
           <Flex
             w="70%"
             justifyContent="space-between"
@@ -69,7 +131,7 @@ export default function Home() {
         </Flex>
       </Flex>
       {/* Tasks */}
-      {(tasks && tasks.length === 0) || !isSignedIn ? (
+      {tasks && tasks.length === 0 ? (
         <Grid w="full" h="77vh" placeItems="center">
           <Text opacity=".5">No tasks</Text>
         </Grid>
