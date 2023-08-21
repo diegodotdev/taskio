@@ -29,7 +29,7 @@ export default function Home() {
         >
           <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
             <Flex
-              w="70%"
+              w={{ base: "full", md: "70%" }}
               justifyContent="space-between"
               pr="2"
               alignItems="center"
@@ -51,6 +51,7 @@ export default function Home() {
               placeItems="center"
               borderLeft="1px"
               borderLeftColor="gray.400"
+              display={{ base: "none", md: "grid" }}
             >
               <Text>Status</Text>
             </Grid>
@@ -60,6 +61,7 @@ export default function Home() {
               placeItems="center"
               borderLeft="1px"
               borderLeftColor="gray.400"
+              display={{ base: "none", md: "grid" }}
             >
               <Check size="20px" />
             </Grid>
@@ -69,6 +71,7 @@ export default function Home() {
               placeItems="center"
               borderLeft="1px"
               borderLeftColor="gray.400"
+              display={{ base: "none", md: "grid" }}
             >
               <Trash size="20px" />
             </Grid>
@@ -85,7 +88,7 @@ export default function Home() {
       <Flex direction="column" borderBottom="1px" borderBottomColor="gray.400">
         <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
           <Flex
-            w="70%"
+            w={{ base: "full", md: "70%" }}
             justifyContent="space-between"
             pr="2"
             alignItems="center"
@@ -107,6 +110,7 @@ export default function Home() {
             placeItems="center"
             borderLeft="1px"
             borderLeftColor="gray.400"
+            display={{ base: "none", md: "grid" }}
           >
             <Text>Status</Text>
           </Grid>
@@ -116,6 +120,7 @@ export default function Home() {
             placeItems="center"
             borderLeft="1px"
             borderLeftColor="gray.400"
+            display={{ base: "none", md: "grid" }}
           >
             <Check size="20px" />
           </Grid>
@@ -125,6 +130,7 @@ export default function Home() {
             placeItems="center"
             borderLeft="1px"
             borderLeftColor="gray.400"
+            display={{ base: "none", md: "grid" }}
           >
             <Trash size="20px" />
           </Grid>

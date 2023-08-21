@@ -88,8 +88,19 @@ export default function Create() {
           Create
         </Button>
       </Flex>
-      <Flex w="full" h="77vh" gap="4">
-        <Flex direction="column" gap="4" w="50%" h="full" pb="4">
+      <Flex
+        w="full"
+        h={{ base: "auto", md: "77vh" }}
+        gap="4"
+        direction={{ base: "column", md: "row" }}
+      >
+        <Flex
+          direction="column"
+          gap="4"
+          w={{ base: "full", md: "50%" }}
+          h="full"
+          pb="4"
+        >
           <Input
             type="text"
             placeholder="Title"
@@ -104,7 +115,7 @@ export default function Create() {
             value={description}
           ></Textarea>
         </Flex>
-        <Flex w="50%" direction="column" gap="4">
+        <Flex w={{ base: "full", md: "50%" }} direction="column" gap="4">
           <Flex w="full" gap="4">
             <Input
               type="text"

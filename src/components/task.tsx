@@ -33,7 +33,11 @@ export default function Task(props: TaskProps) {
   };
   return (
     <Flex direction="column" borderBottom="1px" borderBottomColor="gray.400">
-      <Flex w="full" h={{ md: "10vh", "2xl": "5vh" }} alignItems="center">
+      <Flex
+        w="full"
+        h={{ base: "8vh", md: "10vh", "2xl": "5vh" }}
+        alignItems="center"
+      >
         <Flex w="70%">
           <Link to={`/tasks/${id}`}>
             <Text _hover={{ textDecoration: "underline" }}>{title}</Text>
@@ -45,6 +49,7 @@ export default function Task(props: TaskProps) {
           placeItems="center"
           borderLeft="1px"
           borderLeftColor="gray.400"
+          display={{ base: "none", md: "grid" }}
         >
           <Text>{completed ? "Done" : "Not Done"}</Text>
         </Grid>
@@ -54,6 +59,7 @@ export default function Task(props: TaskProps) {
           placeItems="center"
           borderLeft="1px"
           borderLeftColor="gray.400"
+          display={{ base: "none", md: "grid" }}
         >
           <IconButton
             icon={<Check size="20px" />}
@@ -68,6 +74,7 @@ export default function Task(props: TaskProps) {
           placeItems="center"
           borderLeft="1px"
           borderLeftColor="gray.400"
+          display={{ base: "none", md: "grid" }}
         >
           <IconButton
             icon={<Trash size="20px" />}
